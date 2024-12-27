@@ -1,8 +1,15 @@
-const io = require('socket.io')(3000, {
+const port = process.env.PORT || 3000;
+server.listen(port, () => {
+    console.log(`Server running on port ${port}`);
+});
+
+
+const io = require('socket.io')(port, {
     cors: {
         origin: "*",
     },
 });
+
 
 
 const products = [];
